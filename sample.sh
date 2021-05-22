@@ -1,2 +1,2 @@
-echo Hello World
-echo Good Evening
+echo Gud Afternoon
+
