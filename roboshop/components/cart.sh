@@ -1,1 +1,2 @@
-echo Welcome to cart
+#!/bin/bash
+echo Welcome to Cart
