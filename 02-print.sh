@@ -5,5 +5,5 @@
 echo Hello World
 echo Good Night
 echo Hii
-echo Welcome
+echo Welcome to Devops
 echo -e "Hello,\nWelcome to Devops Training"
