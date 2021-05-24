@@ -4,3 +4,5 @@
 
 echo Hello World
 echo Good Night
+
+echo -e "Hello,\nWelcome to Devops Training"
