@@ -7,4 +7,3 @@
 
 
 ls
-find /etc -name passwd
