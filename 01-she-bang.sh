@@ -6,4 +6,4 @@
 #2. It has to be in  the line number 1.
 
 
-echo Welcome
+echo Welcome to she-bang
