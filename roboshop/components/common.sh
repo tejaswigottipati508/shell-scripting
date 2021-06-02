@@ -1,3 +1,1 @@
-#!/bin/bash
-
-echo I am common
+#!bin
