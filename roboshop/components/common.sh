@@ -6,3 +6,7 @@ if [ "$USER_ID" -ne 0 ]; then
   echo -e "\e[31mYou must be a root user to execute this script\e[0m"
   exit 1
   fi
+
+print() {
+  echo "\e[1m "
+}
