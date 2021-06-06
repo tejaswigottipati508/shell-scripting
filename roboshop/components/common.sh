@@ -8,5 +8,5 @@ if [ "$USER_ID" -ne 0 ]; then
   fi
 
 print() {
-  echo "\e[1m "
+  echo "\e[1m $(date +%c)"
 }
