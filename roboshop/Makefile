@@ -3,8 +3,8 @@ help:           ## Show this help.
 common:
 	@sh components/common.sh
 
-cart: common ## Install Cart Component
+cart: common    ## Install Cart Component
 	@echo does something
 
-catalogue: common ## This message will show up too!!!
+catalogue: common   ## This message will show up too!!!
 	@echo does something
