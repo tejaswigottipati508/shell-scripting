@@ -1,4 +1,5 @@
 #!/bin/bash
+
 component=$1
 
 if [ -z "${component}" ]; then
