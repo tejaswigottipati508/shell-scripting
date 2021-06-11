@@ -9,8 +9,10 @@ yum install nginx -y
 Stat $?
 
 Print "Downloading Frontend Content" 'curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"'
+
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 Stat $?
+
 
 Print "Remove Old Docs" "cd /usr/share/nginx/html ;rm -rf *"
 cd /usr/share/nginx/html
