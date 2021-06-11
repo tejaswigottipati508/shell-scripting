@@ -8,8 +8,8 @@ cart:               ## Install Cart Component
 	@sh components/cart.sh
 
 catalogue: common
-catalogue:          ##Install Catalogue Component
-    @sh components/catalogue.sh
+catalogue:          ##Install Frontend Component
+	@sh components/catalogue.sh
 
 frontend: common
 frontend:          ##Install Frontend Component
