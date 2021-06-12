@@ -1,3 +1,5 @@
+common:
+	@sudo sh components/common.sh
 cart:
 	@sudo sh components/cart.sh
 catalogue:
