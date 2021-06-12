@@ -1,9 +1,9 @@
 common:
 	@sudo sh components/common.sh
-cart:
+cart: common
 	@sudo sh components/cart.sh
-catalogue:
+catalogue: common
 	@sudo sh components/catalogue.sh
-frontend:
+frontend: common
 	@sudo sh components/frontend.sh
 
