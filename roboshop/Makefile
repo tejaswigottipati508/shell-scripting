@@ -17,7 +17,7 @@ help:           ## Show this help.
 
 # Everything below is an example
 
-target00:       ## This message will show up when typing 'make help'
+target00:
 	@echo does nothing
 
 target01:       ## This message will also show up when typing 'make help'
