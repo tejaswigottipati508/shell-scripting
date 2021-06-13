@@ -17,14 +17,12 @@ help:           ## Show this help.
 
 # Everything below is an example
 
-target00:
-	@echo does nothing
+common:
+	@sh components/common.sh
 
-target01:       ## This message will also show up when typing 'make help'
+cart: common     ##Install Cart Component
 	@echo does something
 
 # Remember that targets can have multiple entries (if your target specifications are very long, etc.)
-target02:       ## This message will show up too!!!
-target02: target00 target01
-	@echo does even more
-
+catalogue: common  ##This message will show up too!!!
+    @echo does something
