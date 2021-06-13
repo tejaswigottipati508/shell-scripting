@@ -12,7 +12,7 @@
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
 
-help:           ## Show this help.
+help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 # Everything below is an example
@@ -20,9 +20,10 @@ help:           ## Show this help.
 common:
 	@sh components/common.sh
 
-cart: common     ##Install Cart Component
+cart: common
+cart:      ## Install Cart Component
 	@echo does something
 
-# Remember that targets can have multiple entries (if your target specifications are very long, etc.)
-catalogue: common    ## This message will show up too!!!
+catalogue: common
+catalogue:    ## Install Catalogue Component
 	@echo does something
