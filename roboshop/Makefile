@@ -24,5 +24,5 @@ cart: common     ##Install Cart Component
 	@echo does something
 
 # Remember that targets can have multiple entries (if your target specifications are very long, etc.)
-catalogue: common  ##This message will show up too!!!
-    @echo does something
+catalogue: common    ## This message will show up too!!!
+	@echo does something
