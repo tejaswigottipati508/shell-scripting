@@ -21,7 +21,7 @@ common:
 	@sh components/common.sh
 
 cart: common
-cart:   ## Install Cart Component
+cart:        ## Install Cart Component
 	@sh components/cart.sh
 
 catalogue: common
