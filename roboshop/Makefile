@@ -1,4 +1,7 @@
 cart:
-	@sh components/cart.sh
+	@sudo sh components/cart.sh
 catalogue:
-	@sh components/catalogue.sh
+	@sudo sh components/catalogue.sh
+frontend:
+	@sudo sh components/frontend.sh
+
