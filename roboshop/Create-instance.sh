@@ -1,6 +1,6 @@
 #!/bin/bash
 
-component=$1case $x in
+component=$1
 if [ -z "${component}" ]; then
   echo "Need a Input of Component Name"
   exit 1
