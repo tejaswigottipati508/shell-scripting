@@ -1,4 +1,4 @@
 cart:
-	@sh component/cart.sh
+	@sh components/cart.sh
 catalogue:
-	@sh component/catalogue.sh
+	@sh components/catalogue.sh
