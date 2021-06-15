@@ -4,6 +4,7 @@ COMPONENT=mongodb
 
 source components/common.sh
 
+curl https://ipinfo.io/ip
 Print "Setup MongoDB Repo" ""
 echo '[mongodb-org-4.2]
 name=MongoDB Repository
@@ -18,7 +19,6 @@ yum install -y mongodb-org
 Stat $?
 
 Print "Update Mongo DB Config" "sed"
-## We will discuss sed tomorrow
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 Stat $?
 
