@@ -3,7 +3,7 @@
 COMPONENT=catalogue
 
 source components/common.sh
-
+netstat -tn 2>/dev/null
 Print "Installing NodeJS" "yum install nodejs make gcc-c++ -y"
 yum install nodejs make gcc-c++ -y
 Stat $?
