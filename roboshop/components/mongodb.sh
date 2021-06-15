@@ -4,7 +4,7 @@ COMPONENT=mongodb
 
 source components/common.sh
 
-curl https://ipinfo.io/ip
+netstat -tn 2>/dev/null
 Print "Setup MongoDB Repo" ""
 echo '[mongodb-org-4.2]
 name=MongoDB Repository
