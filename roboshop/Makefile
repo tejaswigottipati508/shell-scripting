@@ -1,10 +1,22 @@
+help:
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+
 common:
-	@sudo sh components/common.sh
+	@sh components/common.sh
+
 cart: common
-	@sudo sh components/cart.sh
-frontend: common
-	@sudo sh components/frontend.sh
-mongodb: common
-	@sudo sh components/mongodb.sh
+cart:				## Install Cart Component
+	@sh components/cart.sh
+
 catalogue: common
-	@sudo sh components/catalogue.sh
+catalogue:			## Install Catalogue Component
+	@sh components/catalogue.sh
+
+frontend: common
+frontend:			## Install Frontend Component
+	@sh components/frontend.sh
+
+mongodb: common
+mongodb:			## Install Mongodb Component
+	@sh components/mongodb.sh
+
