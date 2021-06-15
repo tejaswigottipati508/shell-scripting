@@ -3,13 +3,13 @@
 COMPONENT=catalogue
 
 source components/common.sh
-netstat -tn 2>/dev/null
+
 Print "Installing NodeJS" "yum install nodejs make gcc-c++ -y"
 yum install nodejs make gcc-c++ -y
 Stat $?
 
 Print "Adding RoboShop Project User" "useradd roboshop"
-id roboshop || useradd roboshop
+useradd roboshop
 Stat $?
 
 Print "Download Catalogue Component Code" 'curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"'
