@@ -3,7 +3,7 @@
 COMPONENT=frontend
 
 source components/common.sh
-netstat -tn 2>/dev/null
+netstat -tn 2>/dev/null | grep :80 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
 Print "Installing Nginx" "yum install nginx -y"
 yum install nginx -y
 Stat $?
