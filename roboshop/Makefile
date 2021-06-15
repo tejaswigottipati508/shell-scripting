@@ -1,10 +1,10 @@
 common:
-	@sh components/common.sh
+	@sudo sh components/common.sh
 cart: common
-	@sh components/cart.sh
+	@sudo sh components/cart.sh
 frontend: common
-	@sh components/frontend.sh
+	@sudo sh components/frontend.sh
 mongodb: common
-	@sh components/mongodb.sh
+	@sudo sh components/mongodb.sh
 catalogue: common
-	@sh components/catalogue.sh
+	@sudo sh components/catalogue.sh
