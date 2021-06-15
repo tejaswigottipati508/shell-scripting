@@ -8,4 +8,3 @@ frontend: common
 	@sh components/frontend.sh
 mongodb: common
 	@sh components/mongodb.sh
-
