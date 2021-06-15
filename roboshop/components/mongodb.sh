@@ -34,3 +34,4 @@ Stat $?
 Print "Load Schema" "cd /tmp && unzip -o mongodb.zip && mongo < catalogue.js && mongo < users.js "
 cd /tmp && unzip -o mongodb.zip && cd mongodb-main && mongo < catalogue.js && mongo < users.js
 Stat $?
+
