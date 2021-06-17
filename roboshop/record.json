@@ -3,7 +3,7 @@
   "Changes": [{
     "Action": "UPSERT",
     "ResourceRecordSet": {
-      "Name": "${component}.tejadevops.tk",
+      "Name": "${component}-ss.tejadevops.tk",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": "${IPADDRESS}"}]
