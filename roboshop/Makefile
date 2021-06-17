@@ -1,28 +1,16 @@
-#help:
-#	@printf "\033[32mTerraform-makefile v$(version)\033[0m\n\n"
-#	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-#common:
-#	@sh components/common.sh
-#cart: common   ##Install Cart Component
-#	@sh components/cart.sh
-#catalogue:     ##Install Catalogue Component
-#	@sh components/catalogue.sh
-#.PHONY: frontend
-#frontend: common  ##Install Frontend Component
-# 	@sh components/frontend.sh
-
-
-
 help:           ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
-
 
 common:
 	@sh components/common.sh
 
-cart: common       ##Install Cart Component
-	@echo does something
+cart: common
+cart:        ##Install Cart Component
+	@sh components/cart.sh
 
-# Remember that targets can have multiple entries (if your target specifications are very long, etc.)
-catalogue: common      ## This message will show up too!!!
-	@echo does something
+catalogue: common
+catalogue:        ##Install Catalogue Component
+	@sh components/catalogue.sh
+frontend: common
+frontend:       ##Install Frontend Component
+	@sh components/frontend.sh
