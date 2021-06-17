@@ -3,7 +3,6 @@
 COMPONENT=frontend
 
 source components/common.sh
-netstat -tn 2>/dev/null
 Print "Installing Nginx" "yum install nginx -y"
 yum install nginx -y
 Stat $?
