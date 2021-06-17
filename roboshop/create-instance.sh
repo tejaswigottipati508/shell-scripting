@@ -1,6 +1,7 @@
 #!/bin/bash
 
 component=$1
+
 if [ -z "${component}" ]; then
   echo "Need a Input of Component Name"
   exit 1
@@ -16,8 +17,8 @@ IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${compone
 export component
 export IPADDRESS
 
-envsubst <record.json >/tmp/${component}.json
+envsubst <record.json >/tmp/"${component}".json
 
-aws route53 change-resource-record-sets --hosted-zone-id Z05871891T73BLRZZ77ZS --change-batch file:///tmp/${component}.json
+aws route53 change-resource-record-sets --hosted-zone-id Z05871891T73BLRZZ77ZS --change-batch file:///tmp/"${component}".json
 
 
