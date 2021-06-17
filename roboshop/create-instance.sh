@@ -8,3 +8,4 @@ if [ -z "${component}" ]; then
 fi
 
 aws ec2 run-instances --launch-template LaunchTemplateId=lt-02b2e635877a68607 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]"
+
