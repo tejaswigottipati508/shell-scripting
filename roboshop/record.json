@@ -1,9 +1,9 @@
 {
   "Comment": "CREATE/DELETE/UPSERT a record ",
   "Changes": [{
-    "Action": "UPSERT",
+    "Action": "CREATE",
     "ResourceRecordSet": {
-      "Name": "${component}.tejadevops.tk",
+      "Name": "${component}",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": "${IPADDRESS}"}]
