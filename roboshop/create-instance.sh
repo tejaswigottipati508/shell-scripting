@@ -22,3 +22,4 @@ envsubst <record.json >/tmp/${component}.json
 aws route53 change-resource-record-sets --hosted-zone-id Z05871891T73BLRZZ77ZS --change-batch file:///tmp/${component}.json
 
 
+
