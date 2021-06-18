@@ -9,7 +9,7 @@ yum install nodejs make gcc-c++ -y
 Stat $?
 
 Print "Adding RoboShop Project User" "useradd roboshop"
-id roboshop || useradd roboshop
+useradd roboshop
 Stat $?
 
 Print "Download Catalogue Component Code" 'curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"'
@@ -18,17 +18,9 @@ curl -s -L -o /tmp/catalogue.zip https://github.com/roboshop-devops-project/cata
 Stat $?
 
 Print  "Extract Catalogue Component Code"  "cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* ."
-cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* . && cd /home/roboshop/catalogue
+cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* .
 Stat $?
 
-Print "Intall NODEJS Dependencies" "npm install"
-npm install --unsafe-perm
-Stat $?
-
-Print "Update SystemD Script for Catalogue" ""
-mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-# systemctl daemon-reload
-# systemctl start catalogue
-# systemctl enable catalogue
-
+exit
+$ npm install
 
