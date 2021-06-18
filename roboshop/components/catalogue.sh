@@ -4,27 +4,25 @@ COMPONENT=catalogue
 
 source components/common.sh
 
-netstat -tn 2>/dev/null
-
 Print "Installing NodeJS" "yum install nodejs make gcc-c++ -y"
 yum install nodejs make gcc-c++ -y
 Stat $?
 
 Print "Adding RoboShop Project User" "useradd roboshop"
-id roboshop || useradd roboshop
+useradd roboshop
 Stat $?
 
 Print "Download Catalogue Component Code" 'curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"'
 
-curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+curl -s -L -o /tmp/catalogue.zip https://github.com/roboshop-devops-project/catalogue/archive/main.zip
 Stat $?
 
-Print  "Extract Catalogue Component Code"  "cd /home/roboshop" "unzip /tmp/catalogue.zip"  "mv catalogue-main/* ." "cd /home/roboshop/catalogue"
-cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* . && cd /home/roboshop/catalogue
+Print  "Extract Catalogue Component Code"  "cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main catalogue"
+cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue
 Stat $?
 
 exit
-$ npm install
+$npm install
 
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 # systemctl daemon-reload
