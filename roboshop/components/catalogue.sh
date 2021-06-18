@@ -22,7 +22,7 @@ cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* .
 Stat $?
 
 Print "Install NODEJS Dependencies" "npm install"
-npm install
+npm install --unsafe-perm
 Stat $?
 
 
