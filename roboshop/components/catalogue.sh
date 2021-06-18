@@ -17,8 +17,8 @@ Print "Download Catalogue Component Code" 'curl -s -L -o /tmp/catalogue.zip "htt
 curl -s -L -o /tmp/catalogue.zip https://github.com/roboshop-devops-project/catalogue/archive/main.zip
 Stat $?
 
-Print  "Extract Catalogue Component Code"  "cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* ."
-cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* . && /home/roboshop/catalogue
+Print  "Extract Catalogue Component Code"  "cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main"
+cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main
 Stat $?
 
 exit
