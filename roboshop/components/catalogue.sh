@@ -9,6 +9,8 @@ yum install nodejs make gcc-c++ -y
 Stat $?
 
 Print "Adding RoboShop Project User" "useradd roboshop"
+id roboshop
+
 useradd roboshop
 Stat $?
 
@@ -18,7 +20,7 @@ curl -s -L -o /tmp/catalogue.zip https://github.com/roboshop-devops-project/cata
 Stat $?
 
 Print  "Extract Catalogue Component Code"  "cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* ."
-cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* .
+cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main/* . && /home/roboshop/catalogue
 Stat $?
 
 exit
