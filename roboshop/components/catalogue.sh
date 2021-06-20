@@ -9,7 +9,7 @@ yum install nodejs make gcc-c++ -y
 Stat $?
 
 Print "Adding RoboShop Project User" "useradd roboshop"
-id roboshop || useradd roboshop
+useradd roboshop
 Stat $?
 
 Print "Download Catalogue Component Code" 'curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"'
@@ -17,18 +17,14 @@ Print "Download Catalogue Component Code" 'curl -s -L -o /tmp/catalogue.zip "htt
 curl -s -L -o /tmp/catalogue.zip https://github.com/roboshop-devops-project/catalogue/archive/main.zip
 Stat $?
 
-Print  "Extract Catalogue Component Code" "rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop/catalogue && unzip /tmp/catalogue.zip && mv catalogue-main/* . && rm -rf catalogue-main README.MD"
-rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop/catalogue && unzip /tmp/catalogue.zip && mv catalogue-main/* . && rm -rf catalogue-main README.MD
+Print  "Extract Catalogue Component Code" "rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue"
+rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main catalogue  && cd /home/roboshop/catalogue
 Stat $?
 
-Print "Install NODEJS Dependencies" "npm install"
-npm install --unsafe-perm
-Stat $?
+exit
+$ npm install
 
-Print "Update SystemD Script for Catalogue" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.tejadevops.tk/' /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service"
-sed -i -e 's/MONGO_DNSNAME/mongodb-ss.tejadevops.tk/' /home/roboshop/catalogue/systemd.service && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-Stat $?
-
-Print "Start Catalogue Service" "systemctl daemon-reload && systemctl restart catalogue && systemctl enable catalogue"
-systemctl daemon-reload && systemctl restart catalogue && systemctl enable catalogue
-Stat $?
+# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+# systemctl daemon-reload
+# systemctl start catalogue
+# systemctl enable catalogue
