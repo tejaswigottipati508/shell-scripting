@@ -22,7 +22,7 @@ rm -rf /home/roboshop/catalogue && cd /home/roboshop && unzip /tmp/catalogue.zip
 Stat $?
 
 Print "Install NODEJS Dependencies" "npm install"
-npm install
+npm install --unsafe-perm
 Stat $?
 
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
