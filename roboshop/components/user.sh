@@ -17,7 +17,7 @@ Print "Download User Component Code" 'curl -s -L -o /tmp/user.zip "https://githu
 curl -s -L -o /tmp/user.zip "https://github.com/roboshop-devops-project/user/archive/main.zip"
 Stat $?
 
-Print  "Extract User Component Code"  cd /home/roboshop && unzip /tmp/user.zip && mv user-main user && cd /home/roboshop/user"
+Print  "Extract User Component Code"  "cd /home/roboshop && unzip /tmp/user.zip && mv user-main user && cd /home/roboshop/user"
 cd /home/roboshop && unzip /tmp/user.zip && mv user-main user && cd /home/roboshop/user
 Stat $?
 
