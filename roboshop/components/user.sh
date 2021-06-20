@@ -34,4 +34,3 @@ Stat $?
 Print "Start User Service" "systemctl daemon-reload && systemctl restart user && systemctl enable user"
 systemctl daemon-reload && systemctl restart user && systemctl enable user
 Stat $?
-
