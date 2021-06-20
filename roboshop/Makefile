@@ -18,3 +18,11 @@ frontend:       ##Install Frontend Component
 mongodb: common
 mongodb:       ##Install Mongodb Component
 	@sh components/mongodb.sh
+
+redis: common
+redis:       ##Install Redis Component
+	@sh components/redis.sh
+
+user: common
+user:       ##Install User Component
+	@sh components/user.sh
