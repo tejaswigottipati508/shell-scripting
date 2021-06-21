@@ -27,8 +27,8 @@ Stat $?
 
 chown roboshop:roboshop /home/roboshop -R
 
-Print "Update SystemD Script for Cart" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.tejadevops.tk/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service"
-sed -i -e 's/MONGO_ENDPOINT/mongodb-ss.tejadevops.tk/' -e 's/REDIS_ENDPOINT/redis-ss.tejadevops.tk/'  /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
+Print "Update SystemD Script for Cart" "sed -i -e 's/MONGODB_ENDPOINT/mongodb-ss.tejadevops.tk/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service"
+sed -i  -e 's/REDIS_ENDPOINT/redis-ss.tejadevops.tk/' -e 's/CATALOGUE_ENDPOINT/catalogue-ss.tejadevops.tk/' /home/roboshop/cart/systemd.service && mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
 Stat $?
 
 Print "Start Cart Service" "systemctl daemon-reload && systemctl restart cart && systemctl enable cart"
