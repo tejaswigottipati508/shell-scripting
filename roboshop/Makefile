@@ -14,15 +14,3 @@ catalogue:        ##Install Catalogue Component
 frontend: common
 frontend:       ##Install Frontend Component
 	@sh components/frontend.sh
-
-mongodb: common
-mongodb:       ##Install Frontend Component
-	@sh components/mongodb.sh
-
-redis: common
-redis:       ##Install Frontend Component
-	@sh components/redis.sh
-
-user: common
-user:       ##Install Frontend Component
-	@sh components/user.sh
