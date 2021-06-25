@@ -1,5 +1,6 @@
-help:           ## Show this help.
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+help:
+	@printf "\033[32mRoboShop Shell Scripting Make Options$(version)\033[0m\n\n"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 common:
 	@sh components/common.sh
@@ -7,10 +8,7 @@ common:
 cart: common
 cart:        ##Install Cart Component
 	@sh components/cart.sh
-
-catalogue: common
-catalogue:        ##Install Catalogue Component
-	@sh components/catalogue.sh
+PHONY: frontend
 frontend: common
 frontend:       ##Install Frontend Component
 	@sh components/frontend.sh
