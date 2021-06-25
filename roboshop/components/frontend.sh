@@ -9,7 +9,6 @@ yum install nginx -y
 Stat $?
 
 Print "Starting Nginx Service" "systemctl start nginx"
-exit
 systemctl enable nginx
 systemctl start nginx
 Stat $?
