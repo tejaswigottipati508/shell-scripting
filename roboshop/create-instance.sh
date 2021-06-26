@@ -9,7 +9,8 @@ fi
 STATE=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" --query 'Reservations[*].Instances[*].State.Name' --output text)
 
 if [ "$STATE" != "running" ]; then
-aws ec2 run-instances  --launch-template LaunchTemplateId=lt-099427d36c7013440 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]"
+  aws ec2 run-instances  --launch-template LaunchTemplateId=lt-099427d36c7013440 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]"
+  sleep 15
 fi
 
 IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" --query 'Reservations[*].Instances[*].PrivateIpAddress' --output text)
