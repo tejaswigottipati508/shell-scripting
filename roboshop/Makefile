@@ -11,3 +11,7 @@ cart:         ##Install Cart Component
 frontend: common
 frontend:    ##Install Frontend Component
 	@sh components/frontend.sh
+
+mongodb: common
+mongodb:    ##Install Frontend Component
+	@sh components/mongodb.sh
