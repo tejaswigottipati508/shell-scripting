@@ -17,8 +17,8 @@ Print "Download User Component Code" 'curl -s -L -o /tmp/user.zip "https://githu
 curl -s -L -o /tmp/user.zip "https://github.com/roboshop-devops-project/user/archive/main.zip"
 Stat $?
 
-Print  "Extract user Component Code" "cd /home/roboshop && unzip /tmp/user.zip && mv user-main user && cd /home/roboshop/user"
-cd /home/roboshop && unzip /tmp/user.zip && mv user-main user && cd /home/roboshop/user
+Print  "Extract user Component Code" "cd /home/roboshop && unzip /tmp/user.zip &&  mv /home/roboshop/user-main /home/roboshop/user && cd /home/roboshop/user"
+cd /home/roboshop && unzip /tmp/user.zip &&  mv /home/roboshop/user-main /home/roboshop/user && cd /home/roboshop/user
 Stat $?
 
 Print "Install NOdeJS Dependencies" "npm install"
