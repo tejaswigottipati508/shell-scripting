@@ -20,10 +20,3 @@ catalogue: common
 catalogue:    ##Install Catalogue Component
 	@sh components/catalogue.sh
 
-redis: common
-redis:    ##Install Frontend Component
-	@sh components/redis.sh
-
-user: common
-user:    ##Install Frontend Component
-	@sh components/user.sh
