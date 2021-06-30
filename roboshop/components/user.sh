@@ -27,7 +27,7 @@ Stat $?
 
 chown roboshop:roboshop /home/roboshop -R
 
-Print "Update SystemD Script for Cart" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.tejadevops.tk/' /home/roboshop/user/systemd.service && mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service"
+Print "Update SystemD Script for Cart" "sed -i -e 's/MONGO_DNSNAME/mongodb-ss.tejadevops.tk/' -e 's/REDIS_ENDPOINT/redis-ss.tejadevops.tk/' /home/roboshop/user/systemd.service && mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service"
 sed -i -e 's/MONGO_ENDPOINT/mongodb-ss.tejadevops.tk/' -e 's/REDIS_ENDPOINT/redis-ss.tejadevops.tk/' /home/roboshop/user/systemd.service && mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
 Stat $?
 
