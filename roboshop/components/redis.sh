@@ -19,5 +19,3 @@ Stat $?
 Print "Start Redis Database" "systemctl restart redis && systemctl enable redis"
 systemctl restart redis && systemctl enable redis
 Stat $?
-
-
