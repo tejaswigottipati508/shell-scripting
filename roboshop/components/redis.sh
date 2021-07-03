@@ -4,8 +4,8 @@ COMPONENT=redis
 
 source components/common.sh
 
-Print "Install Redis Repos" "yum install epel-release yum-utils http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y"
-yum install epel-release yum-utils http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+Print "Install Redis Repos" "yum install epel-release yum-utils -y && yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y"
+yum install epel-release yum-utils -y && yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 Stat $?
 
 Print "Install Redis" "yum-config-manager --enable remi && yum install redis -y"
