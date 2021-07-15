@@ -22,6 +22,7 @@ systemctl start mysqld
 Stat $?
 
 Print "Grab Default MYSQL Password" "grep temp /var/log/mysqld.log"
-DEFAULT_PASSWORD=$(grep temp /var/log/mysqld.log | awk '{Print $NF}')
+DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{Print $NF}')
 Stat $?
+
 echo DEFAULT_PASSWORD = $DEFAULT_PASSWORD
