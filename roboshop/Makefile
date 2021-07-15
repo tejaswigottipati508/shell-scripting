@@ -27,3 +27,7 @@ redis:    ##Install Frontend Component
 user: common
 user:    ##Install Frontend Component
 	@sh components/user.sh
+
+user: mysql
+user:    ##Install Frontend Component
+	@sh components/mysql.sh
