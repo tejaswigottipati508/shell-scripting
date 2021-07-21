@@ -26,11 +26,3 @@ DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{Print $
 Stat $?
 
 echo DEFAULT_PASSWORD = $DEFAULT_PASSWORD
-
-Print "Reset MYSQL Password" ""
-mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_RoboShop*999';
-uninstall plugin validate_password;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
-EOF
-Stat $?
