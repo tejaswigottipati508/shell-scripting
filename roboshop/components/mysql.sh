@@ -4,7 +4,7 @@ COMPONENT=user
 
 source components/common.sh
 
-Print "Setup MySQL Repo"
+Print "Setup MySQL Repo" ""
 echo '[mysql57-community]
 name=MySQL 5.7 Community Server
 baseurl=http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/
@@ -26,3 +26,10 @@ DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{Print $
 Stat $?
 
 echo DEFAULT_PASSWORD = $DEFAULT_PASSWORD
+
+Print "Reset MYSQL Password" ""
+mysql -uroot -p"${DEFAULT_PASSWORD}" <<EOF
+uninstall plugin validate_password;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+EOF
+Stat $?
