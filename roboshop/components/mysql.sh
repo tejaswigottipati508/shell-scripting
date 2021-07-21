@@ -28,7 +28,7 @@ Stat $?
 echo DEFAULT_PASSWORD = $DEFAULT_PASSWORD
 
 Print "Reset MYSQL Password" ""
-mysql -uroot -p"${DEFAULT_PASSWORD}" <<EOF
+mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
 uninstall plugin validate_password;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
 EOF
