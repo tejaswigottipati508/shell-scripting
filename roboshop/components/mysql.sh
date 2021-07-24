@@ -21,12 +21,12 @@ systemctl enable mysqld
 systemctl start mysqld
 Stat $?
 
-Print "Grab Default MYSQL Password" "grep temp /var/log/mysqld.log"
-DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{Print $NF}')
-Stat $?
-
 echo "show databases;" | mysql -uroot -ppassword &>/dev/null
 if [ $? -ne 0 ]; then
+   Print "Grab Default MYSQL Password" "grep temp /var/log/mysqld.log"
+   DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{Print $NF}')
+   Stat $?
+
    Print "Reset MYSQL Password" ""
    mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
    ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_RoboShop*999';
@@ -35,3 +35,14 @@ if [ $? -ne 0 ]; then
 EOF
    Stat $?
 fi
+
+Print "Download Schema" 'curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"'
+
+curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
+Stat $?
+
+Print "Load Schema" "mysql <shipping.sql"
+cd /tmp
+unzip -o mysql.zip
+mysql -uroot -ppassword <shipping.sql
+Stat $?
