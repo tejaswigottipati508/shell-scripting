@@ -25,7 +25,7 @@ Print "Grab Default MYSQL Password" "grep temp /var/log/mysqld.log"
 DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{Print $NF}')
 Stat $?
 
-echo "show databases;" ; mysql -uroot -ppassword &>/dev/null
+echo "show databases;" | mysql -uroot -ppassword &>/dev/null
 if [ $? -ne 0 ]; then
    Print "Reset MYSQL Password" ""
    mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
