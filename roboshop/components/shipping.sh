@@ -17,8 +17,8 @@ Print "Download Shipping Code" 'curl -s -L -o /tmp/shipping.zip "https://github.
 curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
 Stat $?
 
-Print "Extract Shipping Code" "unzip /tmp/shipping.zip && mv shipping-main shipping && cd /home/roboshop/shipping"
-unzip /tmp/shipping.zip && mv shipping-main shipping && cd /home/roboshop/shipping
+Print "Extract Shipping Code" "unzip /tmp/shipping.zip && mv shipping-main shipping && cd shipping"
+unzip /tmp/shipping.zip && mv shipping-main shipping && cd shipping
 Stat $?
 
 Print "Maven Compile Code" "mvn clean package && mv target/shipping-1.0.jar shipping.jar"
