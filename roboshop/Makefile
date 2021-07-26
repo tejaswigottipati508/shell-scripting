@@ -31,3 +31,7 @@ user:    ##Install Frontend Component
 mysql: common
 mysql:    ##Install Frontend Component
 	@sh components/mysql.sh
+
+shipping: common
+shipping:    ##Install Frontend Component
+	@sh components/shipping.sh
