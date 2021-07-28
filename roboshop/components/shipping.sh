@@ -24,3 +24,11 @@ Stat $?
 Print "Maven Compile Code" "mvn clean package && mv target/shipping-1.0.jar shipping.jar"
 mvn clean package && mv target/shipping-1.0.jar shipping.jar
 Stat $?
+
+Print "Update SystemD Script for Shipping" 'sed -i -e "s/CARTENDPOINT/cart-ss.tejadevops.tk/" -e "s/DBHOST/mysql-ss.tejadevops.tk/" /home/roboshop/shipping/systemd.service'
+sed -i -e "s/CARTENDPOINT/cart-ss.tejadevops.tk/" -e "s/DBHOST/mysql-ss.tejadevops.tk/" /home/roboshop/shipping/systemd.service
+Stat $?
+
+Print "Start Shipping Service" "mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service && systemctl daemon-reload && systemctl enable shipping && systemctl restart shipping"
+mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service && systemctl daemon-reload && systemctl enable shipping && systemctl restart shipping
+Stat $?
