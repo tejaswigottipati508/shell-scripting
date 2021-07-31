@@ -35,3 +35,11 @@ mysql:    ##Install Frontend Component
 shipping: common
 shipping:    ##Install Frontend Component
 	@sh components/shipping.sh
+
+rabbitmq: common
+rabbitmq:    ##Install Frontend Component
+	@sh components/rabbitmq.sh
+
+payment: common
+payment:    ##Install Frontend Component
+	@sh components/payment.sh
